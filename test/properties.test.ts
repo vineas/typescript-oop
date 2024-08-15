@@ -1,27 +1,19 @@
-describe('Class', () => { 
+describe('Properties', () => { 
     class Customer {
-        readonly id: number;
-        name: string;
-        age?: number; 
-        constructor(id: number, name: string) {
+        readonly id: number; //properties
+        age?: number; //properties opsional karna ada tanda "?"
+        name: string = "Guest" ; //default properties, jika pada parameter namenya kosong maka akan terisin "Guest" secara default
+        constructor(id: number, name: string ) { //jika ingin menggunakan default value, parameter "name" dihapus
             this.id = id;
-            this.name = name;
+            this.name = name; //jika ingin menggunakan default value, ini dihapus
         }
     }
 
-    class Order{
-
-    }
-
-    it('should can create a class', () => {
+    it('should can create a properties', () => {
         const customer: Customer = new Customer(1, "John");
-        const order: Order = new Order();
         console.info(customer)
         const customer2 = new Customer(2, "Margareth");
-        const customer3 = new Customer(3, "Noah");
-        customer3.age = 23;
+        customer2.age = 23;
         console.info(customer2.name);
-        console.info(customer3.age)
     })
  })
-//  Menit 27
